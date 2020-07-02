@@ -1,0 +1,243 @@
+<w!DOCTYPE html>
+<html lang="">
+<head>
+	<title>Doctor Who</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/sky.js"></script>
+	<script src="js/animDoctorWho.js"></script>
+</head>
+<body>
+	
+	<audio src="audio/music.mp3" autoplay loop></audio>
+	
+	<svg id="DoctorWho" width="inherit" height="inherit" viewBox="0 0 1366 625">
+		
+		<g id="tardis">
+
+			<path fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="5557" d="
+				M575,275 h200 v300 h-200 v-300
+				m15,0 v-15 h170 v15
+				m-150,-15 v-15 h130 v15	
+				m-165,315 h-15 v15 h230 v-15 h-20 
+				m-190,-295 h190 v50 h-190 v-50
+				m5,5 h180 v40 h-180 v-40
+				m15,-10 v5 m0,50 v245 m150,-300 v5 m0,50 v245
+				m-140,0 v-230 h60 v230 m10,0 v-230 h60 v230
+				m-120,-220 h40 v50 h-40 v-50 m12,0 v50 m16,0 v-50 m-28,25 h40
+				m30,-25 h40 v50 h-40 v-50 m12,0 v50 m16,0 v-50 m-28,25 h40
+				m-110,35 h40 v50 h-40 v-50 m0,60 h40 v50 h-40 v-50
+				m70,-60 h40 v50 h-40 v-50 m0,60 h40 v50 h-40 v-50
+				m-6.5,-50 h3 v30 h-3 v-30 m0,43 h3 v5 h-3 v-5
+			">
+				<animate
+					id="tardisCasing"
+					attributeName="stroke-dashoffset"
+					from="5557"
+					to="0"
+					begin="0s"
+					dur="30s"
+					repeatCount="1"
+					fill="freeze"
+					calcMode="linear"
+				/>
+			</path>
+			
+			<path id="tardisFlashlight" fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="192" d="
+				M658,245 A1,5 0 0 1 658,225 A5,1 0 0 1 688,225 A1,5 0 0 1 688,245
+				M667,222 v23 M679,222 v23 M655,232 h36 M655,237 h36
+			">
+				<animate
+					attributeName="stroke-dashoffset"
+					from="192"
+					to="0"
+					begin="tardisCasing.begin"
+					dur="5s"
+					repeatCount="1"
+					fill="freeze"
+					calcMode="linear"
+				/>
+			</path>
+
+			<text x="640" y="310" stroke="#000" stroke-width="1px" opacity="0" font-family="'Leckerli One', cursive">
+				TARDIS
+				<animate
+					attributeName="opacity"
+					from="0"
+					to="1"
+					begin="tardisCasing.end - 25s"
+					dur="1s"
+					repeatCount="1"
+					fill="freeze"
+					calcMode="linear"
+				/>
+			</text>
+			
+		</g>
+
+		<defs>
+
+			<g id="daleks">
+				
+				<path id="d1" fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="1840" d="
+					M300,275 A3,3 0 0 1 400,275
+					l-15,2
+					v5 h5 l15,10 h-20
+					v5 h5 l15,10 h-20
+					v5 h5 l15,10 h-20
+					v10 h25 l30,100
+					l-20,20 l-40,15 l-60,0 l-40,-15 l-20,-20
+					l30,-100 h25 v-10
+					h-20 l15,-10 h5 v-5   
+					h-20 l15,-10 h5 v-5
+					h-20 l15,-10 h5 v-5
+					l-15,-2
+					m-36,145 a1,1 0 0 0 -5,22 l2,10
+					l15,20 l40,15 l65,0 l40,-15 l20,-20 l2,-10 a1,1 0 0 0 -5,-20
+					m-5,26 l-10,10 l-40,19 h-60 l-40,-15 l-15,-12
+					m15,2 l30,-100
+					m7,115 l15,-100
+					m45,100 l-15,-100
+					m55,85 l-30,-100
+				">
+					<animate
+						attributeName="stroke-dashoffset"
+						from="1840"
+						to="0"
+						begin="0s"
+						dur="10s"
+						repeatCount="1"
+						fill="freeze"
+						calcMode="linear"
+					/>
+				</path>
+
+				<g class="daleksCircles">
+					
+					<defs>
+						<circle id="dalekCircle" r="8" fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="50" />
+					</defs>
+
+					<circle cx="350" cy="260" r="12" fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="75" />
+
+					<use xlink:href="#dalekCircle" x="295" y="360" />
+					<use xlink:href="#dalekCircle" x="287" y="389" />
+					<use xlink:href="#dalekCircle" x="279" y="417" />
+
+					<use xlink:href="#dalekCircle" x="321" y="370" />
+					<use xlink:href="#dalekCircle" x="315" y="402" />
+					<use xlink:href="#dalekCircle" x="308" y="433" />
+
+					<use xlink:href="#dalekCircle" x="350" y="380" />
+					<use xlink:href="#dalekCircle" x="350" y="412" />
+					<use xlink:href="#dalekCircle" x="350" y="443" />
+
+					<use xlink:href="#dalekCircle" x="382" y="373" />
+					<use xlink:href="#dalekCircle" x="388" y="406" />
+					<use xlink:href="#dalekCircle" x="395" y="438" />
+
+					<use xlink:href="#dalekCircle" x="407" y="363" />
+					<use xlink:href="#dalekCircle" x="415" y="394" />
+					<use xlink:href="#dalekCircle" x="423" y="422" />
+
+					<animate
+						attributeName="stroke-dashoffset"
+						from="50"
+						to="0"
+						begin="0s"
+						dur="1s"
+						repeatCount="1"
+						fill="freeze"
+						calcMode="linear"
+					/>
+
+				</g>
+
+				<path fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="129" d="
+					M411,273 m-35,-40 l20,-15 l10,10 l-15,20
+					m-83,0 l-15,-20 l10,-10 l20,15
+				">
+					<animate attributeName="stroke-dashoffset" repeatCount="1" begin="0s" from="129" to="0" dur="1" fill="freeze" calcMode="linear" />
+				</path>
+
+			</g>
+
+		</defs>
+		
+		<use xlink:href="#daleks" x="-180" y="120" />
+		<use xlink:href="#daleks" x="40" y="100" />
+		<use xlink:href="#daleks" x="610" y="100" />
+		<use xlink:href="#daleks" x="830" y="120" />
+
+		<g id="heading">
+			
+			<defs>
+				<g id="tardisLogo">
+					<path fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="865" d="
+						M50,10 l-8,5 v10 l8,-5 l8,5 v-10 l-8,-5
+						m-3,18 l-35,18 v5 l3,1 v50 l-3,1 v5 l35,18 v-98 l-4,2
+						m-8,30 v35 h-5 v-35 h6
+						m18,-31 v98 l35,-18 v-5 l-3,-1 v-50 l3,-1 v-5
+						l-10,-5 v55 h-3 v-56 l-10,-5 v61 h-3 v-62 l-9,-6 v1
+					">
+						<animate
+							attributeName="stroke-dashoffset"
+							from="865"
+							to="0"
+							begin="0s"
+							dur="10s"
+							repeatCount="1"
+							fill="freeze"
+							calcMode="linear"
+						/>
+					</path>
+				</g>
+			</defs>
+
+			<defs>
+				<g id="soundScrewdriver">
+					<path fill="none" stroke="#000" stroke-width="2px" stroke-dasharray="840" d="
+						M10,15 a1,1 0 0 0 0,15 v-15.5
+						m3,1.5 l5,-2.5 h7.5 l2.5,2.5 h10 l5,-2.5 h5 l5,2.5 h5 v2.5
+						l-3,1.5 v5 l3,1.5 v2.5 
+						h-5 l-5,2.5 h-5 l-5,-2.5 h-10 l-2.5,2.5 h-7.5 l-5,-2.5 v-13 l1,-0.5
+						m15,4 h10 v5 h-10 v-5.5
+						m34.5,-3.25 l2,2.5 h5 l2.5,-2 h2.5 a1,5 0 0 1 0,13 h-2.5 l-2.5,-2 h-5 l-2.5,2.5
+						v-3.5 l-4,-2 v-3.5 l4,-2 v-3.5 l0.5,0.5
+						m15,0.5 a1,5 0 0 1 0,13 h25 l3,-1.5 v-2.5 l-3,-1 v-4 l3,-1 v-2.5 l-3,-1 h-25
+						m29,-1.5 l3,1.5 v4.5 l-3,1 v2 l3,1 v4.5 l-3,1.5 h6 l2,1.5 h5
+						a1,5 0 0 0 0,-18 h-5 l-2,1 h-6
+						m16,-1 a1,5 0 0 1 0,18 h80 a1,1 0 0 1 5,0 a1,1 0 0 0 5,0
+						a1,1 0 0 1 5,0 a1,1 0 0 0 5,0 h10 a1,5 0 0 0 0,-18
+						h-10 a1,1 0 0 0 -5,0 a1,1 0 0 1 -5,0 a1,1 0 0 0 -5,0 a1,1 0 0 1 -5,0 h-55
+						a1,1 0 0 0 -5,0 h-20
+						m73,0 a1,5 0 0 1 0,18 h2.5 l3,-1.5 h2.5 l3,1.5 h7.5 v-4 h-5 v-10 h5 v-4
+						h-7.5 l-3,1.5 h-2.5 l-3,-1.5 h-2.5
+						m21.5,0 v6 h-5 v6 h5 v6 h5 a1,5 0 0 0 0,-18 h-5.5
+					" />
+					<animate
+						attributeName="stroke-dashoffset"
+						from="840"
+						to="0"
+						begin="0s"
+						dur="10s"
+						repeatCount="1"
+						fill="freeze"
+						calcMode="linear"
+					/>
+				</g>
+			</defs>			
+		
+			<use xlink:href="#tardisLogo" x="740" y="50" />	
+			<text x="512" y="120" fill="none" stroke="#000" stroke-width="2px" opacity="1" font-size="30" font-family="cursive">DOCTOR WHO</text>
+			<use xlink:href="#soundScrewdriver" x="498" y="120" />
+			
+		</g>
+
+	</svg>
+
+</body>
+</html>
