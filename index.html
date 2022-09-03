@@ -11,8 +11,7 @@
 	<script src="js/animDoctorWho.js"></script>
 </head>
 <body>
-	
-	<audio src="audio/music.mp3" autoplay loop></audio>
+	<audio id="audioBG" src="audio/music.mp3" autoplay loop></audio>
 	
 	<svg id="DoctorWho" width="inherit" height="inherit" viewBox="0 0 1366 625">
 		
@@ -239,5 +238,10 @@
 
 	</svg>
 
+	<script>
+		addEventListener("click", () => {
+			document.getElementById("audioBG").play()
+		}, { once: true });
+	</script>
 </body>
 </html>
